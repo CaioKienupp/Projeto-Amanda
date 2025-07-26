@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abreu Arquitetura</title>
+    <link rel="stylesheet" href="Estilos/arquitetura.css">
+</head>
+<body>
+      <header class="header">
+    <nav class="nav" id="nav">
+      <a href="interiores.html">Interiores</a>
+      <a href="residencial.html">Residencial</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </header>
+  
+    <section class="hero">
+    <img src="imagens/Amanda/capa01 (2).jpeg" alt="Imagem de capa" class="hero-image">
+    <div class="hero-overlay"></div>
+  </section>
+
+   <footer>
+    <p>Contato:<a href="mailto:aarquitetura@outlook.pt" target="_blank">aarquitetura@outlook.pt</a>| Instagram: <a href="https://www.instagram.com/abreuarquitetura/" target="_blank">@abreuarquitetura</a></p>
+    <p class="criador">Site Criado por <a href="https://github.com/CaioKienupp" target="_blank">Caio Kienupp</a></p>
+  </footer>
+   <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('ativo');
+    });
+  </script>
+</body>
+</html>
