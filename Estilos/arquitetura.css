@@ -1,26 +1,24 @@
 @charset "UTF-8";
 
-
 /* -------------------------- */
-/*      RESET / GLOBAIS      */
+/*        RESET / BASE        */
 /* -------------------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Sriracha&display=swap');
+:root {
+  --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+  --fonte2: "Comic Neue", cursive;
 
-:root{
-  
-    --fonte1: Verdana, geneva, Tahoma, sans-serif;
-    --fonte2: "Comic Neue", cursive;
+  --cor0: #324759;
+  --cor1: #D9CE96;
+  --cor2: #BFAF7E;
+  --cor3: #8C765A;
+  --cor4: #F2F2F2;
+  --cor5: #574936;
 
-    --cor0: #324759;
-    --cor1: #D9CE96;
-    --cor2: #BFAF7E;
-    --cor3: #8C765A ;
-    --cor4: #F2F2F2 ;
-    --cor5: #574936;
+  --header-h: 70px;
 }
-
 
 * {
   margin: 0;
@@ -28,58 +26,63 @@
   box-sizing: border-box;
 }
 
-
-body{
-    font-family: var(--fonte1);
-    font-size: 1em;
-    line-height: 1.5em;
-    background-color:var(--cor2) ;
+body {
+  font-family: var(--fonte1);
+  font-size: 1em;
+  line-height: 1.5em;
+  background-color: var(--cor2);
 }
 
 /* -------------------------- */
-/*      NAVEGAÇÃO / MENU      */
+/*         HEADER / NAV       */
 /* -------------------------- */
 
-.header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 30px ;
-    display: flex;
-    justify-content:space-between ;
-    align-items: center;
-    z-index: 10;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-h);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
-.nav{
-    display: flex;
-    gap: 30px;
+.nav {
+  display: flex;
+  gap: 30px;
 }
 
-.nav a{
-    color: var(--cor3);
-    text-decoration: none;
-    font-weight: bold;
-    transition: .5s;
+.nav a {
+  color: var(--cor0);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.nav a:hover{
-    color: var(--cor1);
+.nav a:hover {
+  color: var(--cor4);
 }
 
-.hamburger{
-    display: none;
-    font-size: 20px;
-    color: var(--cor0);
-    cursor: pointer;
-    transition: .5s;
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: var(--cor1);
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+/* -------------------------- */
+/*         HERO SECTION       */
+/* -------------------------- */
 
 .hero {
-  position: relative;
+  margin-top: var(--header-h);
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 .hero-image {
@@ -88,32 +91,74 @@ body{
   object-fit: cover;
 }
 
-/* RESPONSIVO */
+/* -------------------------- */
+/*        FOOTER (opcional)   */
+/* -------------------------- */
+
+footer {
+  color: var(--cor5);
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: var(--cor0);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------- */
+/*         RESPONSIVO         */
+/* -------------------------- */
 
 @media (max-width: 768px) {
   .nav {
     display: none;
     flex-direction: column;
+    align-items: center;
     background: var(--cor0);
     position: absolute;
-    top: 60px;
+    top: var(--header-h);
     left: 0;
-    width: 25%;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 9999;
   }
 
   .nav.ativo {
     display: flex;
   }
 
-  .hamburger {
-    display: block;
-    transition: .5s;
+  .nav a {
+    font-size: 1.2em;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    color: var(--cor4);
   }
 
-  .hamburger:hover{
-    color:var(--cor1);
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger:hover {
+    color: var(--cor1);
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-image {
+    object-fit: contain;
   }
 }
+
+
 
 
 /* -------------------------- */
