@@ -140,9 +140,6 @@ h2 {
   line-height: 1.6;
 }
 
-/* Página de Interiores */
-
-/* Título específico */
 .titulo {
   font-size: 36px;
   padding: 20px;
@@ -150,37 +147,61 @@ h2 {
   text-align: center;
 }
 
+/* ========================== */
+/* GALERIA E PRINCIPAL - IMAGENS MAIORES */
+/* ========================== */
 
-/* Mantém layout 2x2 */
+/* Container principal com 2 colunas lado a lado */
 .principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.principal > .img-container {
+  flex: 0 0 48%; /* 2 colunas lado a lado */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Galeria dentro do projeto: 2x2 com 48% para cada imagem */
+.galeria {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 0 0 0;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.img-container {
-  width: 48%; /* duas por linha */
+.galeria .img-container {
+  flex: 0 0 48%; /* 2 imagens por linha */
   text-align: center;
 }
 
-/* Caixa que envolve a imagem + texto */
+/* Estilo padrão para todas as imagens dentro do container */
+.img-container {
+  /* Remove width 70% para evitar conflito, controla via .principal e .galeria */
+  text-align: center;
+}
+
 .img-wrapper {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 250px; /* altura fixa para uniformizar */
   border-radius: 12px;
   overflow: hidden;
 }
 
-/* Estilo da imagem */
 .img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* cobre toda área, cortando imagem para uniformizar */
   border-radius: 12px;
   box-shadow: 0 4px 12px #32475970;
   transition: transform 0.5s ease;
@@ -190,7 +211,6 @@ h2 {
   transform: scale(1.03);
 }
 
-/* Texto sobre a imagem */
 .texto-sobre-imagem {
   position: absolute;
   bottom: 10px;
@@ -204,7 +224,20 @@ h2 {
   pointer-events: none;
 }
 
+.video-wrapper {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px #32475970;
+  margin: 0 auto;
+}
 
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
 
 /* -------------------------- */
 /*           SOBRE            */
@@ -338,12 +371,29 @@ p.criador {
     text-align: justify;
   }
 
-  .galeria a {
-    width: 100%;
+  /* Galeria e principal responsivos */
+  .galeria, .principal {
+    max-width: 100%;
+    padding: 10px;
   }
 
-  .galeria img {
-    width: 95%;
+  .img-container {
+    width: 100% !important; /* força 100% largura em telas pequenas */
+    max-width: none;
+  }
+
+  .img-wrapper {
+    height: auto; /* altura automática para responsivo */
+  }
+
+  .galeria img,
+  .principal img {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-wrapper {
+    max-width: 100%;
   }
 
   .titulo {
