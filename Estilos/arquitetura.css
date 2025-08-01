@@ -383,11 +383,14 @@ p.criador {
   .galeria, .principal {
     max-width: 100%;
     padding: 10px;
+    justify-content: center;
   }
 
   .img-container {
     width: 100% !important; /* força 100% largura em telas pequenas */
     max-width: none;
+    margin: 0;
+    text-align: center;
   }
 
   .img-wrapper {
