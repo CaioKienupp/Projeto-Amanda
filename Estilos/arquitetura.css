@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
 /* -------------------------- */
-/*        RESET / BASE        */
+/*          IMPORTS           */
 /* -------------------------- */
-
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
+/* -------------------------- */
+/*          VARIÁVEIS         */
+/* -------------------------- */
 :root {
   --fonte1: Verdana, Geneva, Tahoma, sans-serif;
   --fonte2: "Comic Neue", cursive;
@@ -20,6 +22,9 @@
   --header-h: 70px;
 }
 
+/* -------------------------- */
+/*           RESET            */
+/* -------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -34,9 +39,8 @@ body {
 }
 
 /* -------------------------- */
-/*         HEADER / NAV       */
+/*        HEADER / NAV        */
 /* -------------------------- */
-
 .header {
   position: fixed;
   top: 0;
@@ -44,6 +48,7 @@ body {
   width: 100%;
   height: var(--header-h);
   padding: 0 20px;
+  background-color: var(--cor0);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,14 +61,14 @@ body {
 }
 
 .nav a {
-  color: var(--cor0);
+  color: var(--cor3);
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .nav a:hover {
-  color: var(--cor4);
+  color: var(--cor1);
 }
 
 .hamburger {
@@ -75,9 +80,8 @@ body {
 }
 
 /* -------------------------- */
-/*         HERO SECTION       */
+/*        HERO SECTION        */
 /* -------------------------- */
-
 .hero {
   margin-top: var(--header-h);
   height: 100vh;
@@ -92,14 +96,164 @@ body {
 }
 
 /* -------------------------- */
-/*        FOOTER (opcional)   */
+/*       INTERIORES           */
 /* -------------------------- */
+.imagem-fundo {
+  background-image: url(../imagens/Amanda/fundo.png);
+  background-size: 50%;
+}
 
-footer {
-  color: var(--cor5);
-  padding: 20px;
+.projetos {
+  width: 900px;
+  margin: 0 auto;
   text-align: center;
+}
+
+h1 {
+  padding: 40px;
+  font-size: 50px;
+  color: var(--cor0);
+}
+
+h2 {
+  color: var(--cor0);
+  padding: 10px;
+}
+
+.faixa {
+  background-color: var(--cor0);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 40px 0;
+}
+
+.text {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  color: var(--cor4);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Página de Interiores */
+
+/* Título específico */
+.titulo {
+  font-size: 36px;
+  padding: 20px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+
+/* Mantém layout 2x2 */
+.principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.img-container {
+  width: 48%; /* duas por linha */
+  text-align: center;
+}
+
+/* Caixa que envolve a imagem + texto */
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Estilo da imagem */
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #32475970;
+  transition: transform 0.5s ease;
+}
+
+.img-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+/* Texto sobre a imagem */
+.texto-sobre-imagem {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+
+
+/* -------------------------- */
+/*           SOBRE            */
+/* -------------------------- */
+#sobre {
+  padding: 40px;
+}
+
+#sobre h2 {
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+  color: var(--cor0);
+}
+
+.sobre-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sobre-container img {
+  flex: 1 1 35%;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px #32475963;
+}
+
+.sobre-container .texto {
+  flex: 1 1 60%;
+}
+
+.sobre-container p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* -------------------------- */
+/*           FOOTER           */
+/* -------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
   font-size: 0.9em;
+  color: var(--cor0);
 }
 
 footer a {
@@ -108,13 +262,17 @@ footer a {
 }
 
 footer a:hover {
+  color: var(--cor4);
   text-decoration: underline;
+}
+
+p.criador {
+  padding: 20px;
 }
 
 /* -------------------------- */
 /*         RESPONSIVO         */
 /* -------------------------- */
-
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -156,117 +314,7 @@ footer a:hover {
   .hero-image {
     object-fit: contain;
   }
-}
 
-
-
-
-/* -------------------------- */
-/*       INTERIORES          */
-/* -------------------------- */
-
-.imagem-fundo{
-  background-image: url(../imagens/Amanda/fundo.png);
-  background-size: 50%;
-}
-
-.projetos{
-  width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1{
-  padding: 40px;
-  font-size: 50px;
-  color: var(--cor0); 
-}
-
-h2{
-  color: var(--cor0);
-  padding: 10px;
-}
-
-.faixa{
-  background-color: var(--cor0);
-  width: 100vw; /* largura total da viewport */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 40px 0;
-}
-
-.text{
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0px 0px;
-  color: var(--cor4);
-  font-size: 1rem;
-  line-height: 1.6;0;
-}
-
-
-/* DIV PRINCIPAL PARA A PAGINA DE INTERIORES*/
-.principal {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.principal a {
-  width: 48%; /* duas colunas em desktop */
-  text-align: center;
-}
-
-.principal img {
-  width: 100%;
-  height: 250px; /* Tamanho fixo para padronizar */
-  object-fit: cover; /* Preenche cortando o excesso */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px #32475970;
-  transition: transform 0.5s ease;
-}
-
-.principal img:hover {
-  transform: scale(1.03);
-}
-
-/*CSS DOS PROJETOS INDIVIDUAIS*/
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.galeria a {
-  width: 48%; /* duas por linha */
-  text-align: center;
-}
-
-.galeria img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px #32475970;
-  transition: transform 0.5s ease;
-}
-
-.galeria img:hover {
-  transform: scale(1.03);
-}
-
-
-@media (max-width: 768px) {
   .projetos {
     width: 100%;
     padding: 0 20px;
@@ -278,7 +326,8 @@ h2{
     line-height: 1.2;
   }
 
-  h2, .h2projeto {
+  h2,
+  .h2projeto {
     font-size: 24px;
     padding: 10px 0;
   }
@@ -288,87 +337,20 @@ h2{
     font-size: 0.95rem;
     text-align: justify;
   }
-.galeria a {
-    width: 100%; /* uma imagem por linha em celular */
-  }
 
-}
-
-  /* PROJETO ESCRITÓRIO DE ADVOCACIA  */
-
-  .titulo{
-    font-size: 36px;
-    padding: 20px;
-    line-height: 1.2;
-    text-align: center;
-  }
-
-  @media (max-width: 768px) {
-  .titulo {
-    font-size: 1.5rem;
-    padding: 0 20px;
+  .galeria a {
+    width: 100%;
   }
 
   .galeria img {
     width: 95%;
   }
-}
 
+  .titulo {
+    font-size: 1.5rem;
+    padding: 0 20px;
+  }
 
-
-/* -------------------------- */
-/*       RESIDENCIAL         */
-/* -------------------------- */
-
-
-/* -------------------------- */
-/*           SOBRE           */
-/* -------------------------- */
-
-#sobre {
-  padding: 40px;
-}
-
-#sobre h2 {
-  font-size: 20px;
-  margin-bottom: 1.5rem;
-  color: var(--cor0)
-}
-
-/* Container com imagem à esquerda e texto à direita */
-.sobre-container {
-  display: flex;
-  flex-direction: row ;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-/* Imagem */
-.sobre-container img {
-  flex: 1 1 35%;
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 3px 3px 3px #32475963 ;
-}
-
-/* Texto */
-.sobre-container .texto {
-  flex: 1 1 60%;
-}
-
-/* Parágrafos */
-.sobre-container p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  position: center;
-}
-
-/* Responsivo: até 768px, texto em cima e imagem embaixo */
-@media (max-width: 768px) {
   .sobre-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -384,26 +366,3 @@ h2{
     width: 100%;
   }
 }
-
-
-
-
-/* -------------------------- */
-/*           RODAPÉ         */
-/* -------------------------- */
-
-footer{
-    text-align: center;
-    padding: 10px;
-    color: var(--cor0);
-}
-
-footer a:hover{
-    color: var(--cor4);
-}
-
-p.criador{
-    padding: 20px;
-}
-
-
