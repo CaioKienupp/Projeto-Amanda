@@ -196,8 +196,8 @@ h2 {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.11);
-  color: white;
+  background: #3247596c;
+  color: var(--cor4);
   padding: 8px 12px;
   font-size: 18px;
   border-radius: 5px;
